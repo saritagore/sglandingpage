@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Gore Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+    <!-- Header -->
+    <header>
+        <div class="left-header">
+            <img src="profile.jpg" alt="Profile Image" class="profile-image">
+            <span class="logo-name">Sarita Gore</span>
+        </div>
+        <div class="right-header">
+            <div>
+                <span class="email">saritagore21@gmail.com</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <section class="main-section big">
+        <h1>Hello, I am<br> Sarita Gore</h1>
+        <h2>I am a Front-End Developer</h2>
+        <h2 style="margin-top: 5px;margin-bottom: 5px;">My skillsets are..</h2>
+        <div>
+            <span class="skills" id="skills">HTML</span>
+        </div>
+        <a href="#" class="btn" style="display: inline-block;margin-top: 8px;">View Projects</a>
+        <a href="sarita_gore.pdf"
+        download="Sarita_Gore"
+        class="btn" style="display: inline-block;margin-top: 8px;">Download CV</a>
+    </section>
+
+    <!-- For small screens -->
+    <section class="main-section small">
+        <h1>Hello, I am<br> Sarita Gore</h1>
+        <h2>I am a <br>Front-End Developer</h2>
+        <h2 style="margin-top: 5px;margin-bottom: 5px;">My skillsets are..</h2>
+        <div>
+            <span class="skills" id="skills">HTML</span>
+        </div>
+        <a href="#" class="btn" style="display: inline-block;margin-top: 8px;">View Projects</a>
+        <a href="sarita_gore.pdf"
+        download="Sarita_Gore" class="btn" style="display: inline-block;margin-top: 8px;">Download CV</a>
+    </section>
+
+    <!-- Icons -->
+    <div class="icon-fixed">
+        <a href="https://www.linkedin.com/in/sarita-gore" target="_blank">
+            <em class="fa fa-linkedin-square" style="color: #0077b5;transform: scale(1.8);"></em>
+        </a>
+    </div>
+
+    <button class="theme-switcher" id="themeSwitcher"><em class="fa fa-tachometer"></em></button>
+
+    <script>
+        // Animated Skills
+        const skills = ["HTML, CSS, JavaScript", "Angular & VueJS"];
+        let index = 0;
+        const skillElement = document.getElementById('skills');
+
+        function showNextSkill() {
+            skillElement.textContent = skills[index];
+            index = (index + 1) % skills.length;
+            setTimeout(showNextSkill, 1000);  // Change skill every second
+        }
+        showNextSkill();
+
+        // Theme Switcher
+        const themeSwitcher = document.getElementById('themeSwitcher');
+        const body = document.body;
+
+        themeSwitcher.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+
+            } else {
+                body.setAttribute('data-theme', 'light');
+
+            }
+        });
+    </script>
+</body>
+
+</html>

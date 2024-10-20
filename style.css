@@ -1,0 +1,229 @@
+/* Global Styles */
+:root {
+    --primary-color: #333;
+    --secondary-color: #fff;
+    --border-color: #0077b5;
+}
+
+[data-theme="dark"] {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    --border-color: #bbb;
+}
+* {
+    margin: 0;padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 12px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.left-header {
+    position: relative;
+}
+
+/* Profile Image and Logo */
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px double var(--border-color);
+}
+
+.logo-name {
+    position: absolute;top: 50%;transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;width: max-content;
+}
+
+.email {
+    font-size: 14px;
+    display: inline-block;
+    animation: zoomInOut 3s infinite ease-in-out;
+}
+
+/* Main Section */
+.main-section.small {
+    display: none;
+ }
+ .main-section.big {
+    display: block;
+ }
+.main-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.main-section h1 {
+    font-size: 4rem;
+}
+
+.skills {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+/* View Projects Button */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0077b5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Icons */
+.icon-fixed {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.icon-fixed a {
+ color: #0077b5;
+}
+
+.icon-fixed a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    position: fixed;
+    top: 0;
+    margin-top: 22px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var( --primary-color);
+    
+}
+
+.right-header {
+    margin-right: 30px;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: translateX(0); /* Normal size */
+    }
+    50% {
+        transform: translateX(-10px); /* Zoom in */
+    }
+    100% {
+        transform: translateX(0); /* Zoom out */
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-name {
+        font-size: 20px;
+    }
+
+    .email {
+        font-size: 12px;
+    }
+
+    .main-section h1 {
+        font-size: 36px;
+    }
+
+    .skills {
+        font-size: 18px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+
+     .main-section.big {
+        display: none;
+     }
+     .main-section.small {
+        display: block;
+     }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-name {
+        font-size: 18px;
+    }
+
+    .email {
+        font-size: 10px;
+    }
+
+    .main-section h1 {
+        font-size: 4.4rem;
+    }
+    .main-section h2 {
+        font-size: 2rem;
+    }
+
+    .skills {
+        font-size: 3.5rem;
+    }
+
+    .btn {
+        font-size: 2.2rem;
+        padding: 6px 12px;
+    }
+
+    /* Icons for smaller screens */
+    
+
+    .icon-fixed a {
+        font-size: 20px;
+    }
+    .right-header {
+        display: none;
+    }
+
+    .icon-fixed {
+       
+       bottom: 0;
+       transform: translateY(90%);
+    }
+}
